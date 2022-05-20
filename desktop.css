@@ -1,0 +1,66 @@
+* {
+    max-width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+#presentation {
+    display: block;
+    height: 400px;
+    width: 600px;
+    border: 2px solid black;
+    margin: 20px auto 0 auto;
+}
+
+#title,
+#text {
+    font-family: "Roboto";
+    margin-left: 15px;
+    animation: inSlide 0.5s;
+}
+
+#title {
+    color: green;
+    font-weight: 700;
+}
+
+#text {
+    color: black;
+    font-weight: 500;
+}
+
+#arrow-right {
+    position: absolute;
+    top: 210px;
+    left: 1100px;
+    color: black;
+
+}
+
+@keyframes outSlide {
+    from {
+        margin-left: 0;
+        opacity: 100;
+    }
+
+    to {
+        margin-left: -600px;
+        opacity: 0;
+    }
+}
+
+@keyframes inSlide {
+    from {
+        margin-left: 0;
+        opacity: 100;
+    }
+
+    to {
+        margin-left: 600px;
+        opacity: 0;
+    }
+}
