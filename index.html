@@ -98,13 +98,110 @@
     </div>
     <i id="arrow-left" class="fas fa-arrow-left" onclick="slideBackwards();"></i>
     <i id="arrow-right" class="fas fa-arrow-right" onclick="slideForwards();"></i>
+
     <div id="quiz">
         <h1 id="title-kviz">Kviz</h1>
-        <div id="match">
-            <img src="Assets/kalcij.jpg" alt="Ne glej!"></img>
+        <div id="match" class="elements-questions">
+            <div>
+                <img src="Assets/kalcij.jpg" alt="Ne glej!"></img>
+                <input type="text" class="images-input" style="width: 144.24px;" placeholder="Ime elementa"></input>
+            </div>
+            <div>
+                <img src="Assets/barij.jpg" alt="Ne glej!"></img>
+                <input type="text" class="images-input" style="width: 164.39px;" placeholder="Ime elementa"></input>
+            </div>
+            <div>
+                <img src="Assets/stroncij.jpg" alt="Ne glej!"></img>
+                <input type="text" class="images-input" style="width: 148.1px;" placeholder="Ime elementa"></input>
+            </div>
+            <div>
+                <img src="Assets/radij.jpg" alt="Ne glej!"></img>
+                <input type="text" class="images-input" style="width: 117px;" placeholder="Ime elementa"></input>
+            </div>
+            <div>
+                <img src="Assets/magnezij.jpg" alt="Ne glej!"></img>
+                <input type="text" class="images-input" style="width: 124.87px;" placeholder="Ime elementa"></input>
+            </div>
+            <div>
+                <img src="Assets/berilij.jpg" alt="Ne glej!"></img>
+                <input type="text" class="images-input" placeholder="Ime elementa"></input>
+            </div>
         </div>
+        <div id="questions" style="visibility: hidden;">
+            <div id="Kalcij" class="elements-questions">
+                <h2>Kalcij</h2>
+                <h3 class="question">Kje ga najdemo?</h3>
+                <input type="radio" id="kalcij1" name="kalcij1" value="1">
+                <label for="kalcij1"> V vodi</label><br>
+                <input type="radio" id="kalcij2" name="kalcij1" value="2">
+                <label for="kalcij2"> Po vsej zemeljski skorji</label><br>
+                <input type="radio" id="kalcij3" name="kalcij1" value="3">
+                <label for="kalcij3"> V gorah</label><br>
+                <input type="radio" id="kalcij4" name="kalcij1" value="4">
+                <label for="kalcij4"> V strjeni lavi in sedimentnih kamninah</label><br>
+
+                <h3 class="question">Pravilna trditev:</h3>
+                <input type="radio" id="kalcij5" name="kalcij2" value="1">
+                <label for="kalcij5"> Je edini rumenkasti element v svojji skupini</label><br>
+                <input type="radio" id="kalcij6" name="kalcij2" value="2">
+                <label for="kalcij6"> Je peti najpogostejši element v zemeljski skorji</label><br>
+                <input type="radio" id="kalcij7" name="kalcij2" value="3">
+                <label for="kalcij7"> Je eden najlažjih elementov v periodnem sistemu</label><br>
+                <input type="radio" id="kalcij8" name="kalcij2" value="4">
+                <label for="kalcij8"> Prva ga je odkrila Marie Curie</label><br>
+            </div>
+            <div id="Radij" class="elements-questions">
+                <h2>Radij</h2>
+                <h3 class="question">Kje ga najdemo?</h3>
+                <input type="radio" id="radij1" name="radij1" value="1">
+                <label for="radij1"> V uranovih rudah</label><br>
+                <input type="radio" id="radij2" name="radij1" value="2">
+                <label for="radij2"> V barijevih rudah</label><br>
+                <input type="radio" id="radij3" name="radij1" value="3">
+                <label for="radij3"> V morju</label><br>
+                <input type="radio" id="radij4" name="radij1" value="4">
+                <label for="radij4"> V zraku</label><br>
+
+                <h3 class="question">Kako reagira v stiku z dušikom?</h3>
+                <input type="radio" id="radij5" name="radij2" value="1">
+                <label for="radij5"> Zasveti v modri barvi</label><br>
+                <input type="radio" id="radij6" name="radij2" value="2">
+                <label for="radij6"> Zagori</label><br>
+                <input type="radio" id="radij7" name="radij2" value="3">
+                <label for="radij7"> Naredi temno prevleko</label><br>
+                <input type="radio" id="radij8" name="radij2" value="4">
+                <label for="radij8"> Eksplodira</label><br>
+            </div>
+            <div id="Magnezij" class="elements-questions">
+                <h2>Magnezij</h2>
+                <h3 class="question">Kje ga najdemo?</h3>
+                <input type="radio" id="magnezij1" name="magnezij1" value="1">
+                <label for="magnezij1"> V morju</label><br>
+                <input type="radio" id="magnezij2" name="magnezij1" value="2">
+                <label for="magnezij2"> V gorah</label><br>
+                <input type="radio" id="magnezij3" name="magnezij1" value="3">
+                <label for="magnezij3"> V telovadnici</label><br>
+                <input type="radio" id="magnezij4" name="magnezij1" value="4">
+                <label for="magnezijj4"> V manganovi rudi</label><br>
+
+                <h3 class="question">Kako gori?</h3>
+                <input type="radio" id="magnezij5" name="magnezij2" value="1">
+                <label for="magnezij5"> Ne gori</label><br>
+                <input type="radio" id="magnezij6" name="magnezij2" value="2">
+                <label for="magnezij6"> Z rdečim plamenom</label><br>
+                <input type="radio" id="magnezij7" name="magnezij2" value="3">
+                <label for="magnezij7"> Z zelenim plamenom</label><br>
+                <input type="radio" id="magnezij8" name="magnezij2" value="4">
+                <label for="magnrzij8"> Z zelo močno belo svetlobo</label><br>
+            </div>
+        </div>
+    
+        <i id="qback" class="fas fa-angle-left" onclick="prevQ()"></i>
+        <i id="qnext" class="fas fa-angle-right" onclick = "nextQ()"></i>
+    
     </div>
- 
+   
+
     <script src="index.js"></script>
 </body>
 

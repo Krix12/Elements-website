@@ -35,12 +35,18 @@ body {
     font-weight: 500;
 }
 
+#arrow-left:hover,
+#arrow-right:hover {
+    cursor: pointer;
+}
+
 #arrow-left {
     position: absolute;
     top: 210px;
     left: 400px;
     color: black;
 }
+
 #arrow-right {
     position: absolute;
     top: 210px;
@@ -64,19 +70,91 @@ body {
 }
 
 #match {
-    height: 600px;
-    width: 100%;
-    border: 2px solid red;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 20px;
+    height: 400px;
+    width: 680px;
+    margin: 0 auto 0 auto;
 }
 
 #match img {
     height: 100px;
     width: auto;
+    border-radius: 8px;
 }
+
+.images-input {
+    display: block;
+    height: 20px;
+    width: 148px;
+    border: 2px solid black;
+    border-radius: 50px;
+    font-family: "Roboto";
+    padding-left: 5px;
+}
+
+.images-input:focus {
+    outline: none;
+    border: 2px solid #0362fc;
+}
+
+.images-input:hover {
+    outline: none;
+    border: 2px solid #0362fc;
+}
+
+.images-input::placeholder {
+    color: rgb(187, 184, 184);
+    padding-left: 5px;
+}
+
+#questions {
+    font-family: "Roboto";
+}
+
+#questions h2 {
+    margin-left: 8px;
+}
+
+.elements-questions {
+    margin-left: 80px;
+}
+
+#questions input[type=radio] {
+    margin-left: 24px;
+}
+
+.question {
+    margin-left: 16px;
+}
+
+#qback:hover,
+#qnext:hover {
+    cursor: pointer;
+}
+
+#qback {
+    position: absolute;
+    top: 850px;
+    left: 350px;
+    color: black;
+    font-size: 30px;
+
+}
+
+#qnext {
+    position: absolute;
+    top: 850px;
+    right: 350px;
+    color: black;
+    font-size: 30px;
+}
+
 @keyframes outSlide {
     from {
         margin-left: 0;
-      
+
     }
 
     to {
@@ -88,11 +166,21 @@ body {
 @keyframes inSlide {
     from {
         margin-left: 0;
-      
+
     }
 
     to {
         margin-left: 600px;
 
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
