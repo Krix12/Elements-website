@@ -1,5 +1,13 @@
+@font-face {
+    font-family: 'Underwater Love';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Underwater Love'), url('Assets/ulove.woff') format('woff');
+}
+
 * {
     max-width: 100%;
+    max-height: 100%;
 }
 
 body {
@@ -12,7 +20,7 @@ body {
     display: block;
     height: 400px;
     width: 620px;
-    border: 4px solid green;
+    /*border: 4px solid green;*/
     border-radius: 5px;
     margin: 20px auto 0 auto;
 }
@@ -26,8 +34,9 @@ body {
 }
 
 #title {
-    color: green;
-    font-weight: 700;
+    color: #223f7a;
+    font-weight: 900;
+    letter-spacing: 2px;
 }
 
 #text {
@@ -35,6 +44,25 @@ body {
     font-weight: 500;
 }
 
+.video {
+    position: relative;
+    width: 200px;
+     height: 110px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.desc-image {
+    position: relative;
+    height: 110px;
+    width: auto;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-left: 80px;
+    z-index: 10;
+}
 #arrow-left:hover,
 #arrow-right:hover {
     cursor: pointer;
@@ -45,6 +73,7 @@ body {
     top: 210px;
     left: 400px;
     color: black;
+    z-index: 10;
 }
 
 #arrow-right {
@@ -52,21 +81,21 @@ body {
     top: 210px;
     left: 1090px;
     color: black;
-
+    z-index: 10;
 }
 
 #quiz {
     display: block;
-    height: 1500px;
+    height: 500px;
     width: 900px;
-    border: 2px solid black;
-    margin: 200px auto 0 auto;
+    margin: 400px auto 0 auto;
 }
 
 #title-kviz {
-    font-family: "Roboto";
+    font-family: "Underwater Love";
     font-weight: 700;
     margin-left: 8px;
+    color: #0494a8;
 }
 
 #match {
@@ -136,7 +165,7 @@ body {
 
 #qback {
     position: absolute;
-    top: 850px;
+    top: 1050px;
     left: 350px;
     color: black;
     font-size: 30px;
@@ -145,10 +174,79 @@ body {
 
 #qnext {
     position: absolute;
-    top: 850px;
+    top: 1050px;
     right: 350px;
     color: black;
     font-size: 30px;
+}
+
+#stars {
+    display: none;
+}
+
+.waves-up {
+    position: absolute;
+    top: 0;
+    height: 600px;
+    width: 100%;
+    background-color: #56698F;
+    z-index: -1;
+}
+
+.waves-under {
+    height: 1000px;
+    width: 100%;
+    background-color: #66C3D0;
+    position: absolute;
+    top: 600px;
+    z-index: -1;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+}
+
+#wave1 {
+    animation: wave1 2s ease-in-out alternate infinite;
+}
+
+#wave2 {
+    animation: wave2 3s ease-in-out alternate infinite;
+}
+
+#wave3 {
+    animation: wave3 4s ease-in-out alternate infinite;
+}
+
+@keyframes wave1 {
+    0% {
+        transform: translateX(-2000px);
+    }
+
+    100% {
+        transform: translateX(500px);
+    }
+}
+
+@keyframes wave2 {
+    0% {
+        transform: translateX(-1800px);
+    }
+
+    100% {
+        transform: translateX(500px);
+    }
+}
+
+@keyframes wave3 {
+    0% {
+        transform: translateX(-1600px);
+    }
+
+    100% {
+        transform: translateX(500px);
+    }
 }
 
 @keyframes outSlide {
