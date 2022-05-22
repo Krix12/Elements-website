@@ -43,34 +43,44 @@ arrowPrev.style.display = "none";
 
 async function nextQ() {
 
-  if (currentQ === questions.length - 2) {
-    arrowNext.style.display = "none";
-  }
-  arrowPrev.style.display = "inherit";
-  questions[currentQ].style.animation = "fade 0.5s";
-  await sleep(200);
-  questions[currentQ].style.display = "none";
-  currentQ++;
-  questions[currentQ].style.visibility = "visible";
-  questions[currentQ].style.display = "inherit";
-  questions[currentQ].style.animation = "fade 0.5s reverse"
+  await (function () {
+    arrowPrev.style.display = "inherit";
+    questions[currentQ].style.animation = "fade 0.5s";
+    sleep(500);
+    questions[currentQ].style.display = "none";
+    currentQ++;
+    questions[currentQ].style.visibility = "visible";
+    questions[currentQ].style.display = "inherit";
+    questions[currentQ].style.animation = "fade 0.5s reverse"
+
+    if (currentQ === questions.length - 1) {
+
+      arrowNext.style.display = "none";
+
+    }
+  })();
+
 }
 
-async function prevQ() {
-  arrowNext.style.display = "inherit";
-  if (currentQ === 1) arrowPrev.style.display = "none";
-  questions[currentQ].style.animation = "fade 0.5s";
-  await sleep(200);
-  questions[currentQ].style.display = "none";
-  if (currentQ === 1) {
-    questions[currentQ - 1].style.display = "grid";
-  }
-  else {
-    questions[currentQ - 1].style.display = "inherit";
-  }
-  questions[currentQ - 1].style.animation = "fade 0.5s reverse"
-  currentQ--
 
+
+
+async function prevQ() {
+  await (function () {
+    arrowNext.style.display = "inherit";
+    if (currentQ === 1) arrowPrev.style.display = "none";
+    questions[currentQ].style.animation = "fade 0.5s";
+    sleep(200);
+    questions[currentQ].style.display = "none";
+    if (currentQ === 1) {
+      questions[currentQ - 1].style.display = "grid";
+    }
+    else {
+      questions[currentQ - 1].style.display = "inherit";
+    }
+    questions[currentQ - 1].style.animation = "fade 0.5s reverse"
+    currentQ--
+  })();
 }
 
 var inputs = document.getElementsByClassName("images-input");
@@ -90,11 +100,12 @@ function finish() {
   arrowNext.style.display = "initial";
   arrowPrev.style.display = "none";
   questions[questions.length - 1].style.display = "none";
-  questions[0].style.display = "grid";
-  questions[0].style.animation = "fade 0.5s reverse";
   currentQ = 0;
+  questions[currentQ].style.display = "grid";
+  questions[currentQ].style.animation = "fade 0.5s reverse";
+
   Array.from(inputs).forEach((element, index) => {
-    if(element.value.toLowerCase() === matchSolutions[index]) {
+    if (element.value.toLowerCase() === matchSolutions[index]) {
       correct++;
       inputs[index].style.border = "2px solid #3ba55b";
       inputs[index].style.fontWeight = "700";
@@ -105,7 +116,7 @@ function finish() {
       inputs[index].style.color = "#ea4246";
       element.value = element.value + " ➞ " + matchSolutions[index]
     }
-   
+
   })
 
   console.log(correct)
