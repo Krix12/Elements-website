@@ -94,7 +94,32 @@ var matchSolutions = {
   5: "berilij"
 }
 
-
+var selSolutions = {
+  kalcij: {
+    1: "2",
+    2: "2"
+  },
+  radij: {
+    1: "1",
+    2: "3"
+  },
+  magnezij: {
+    1: "1",
+    2: "4"
+  },
+  barij: {
+    1: "4",
+    2: "3"
+  },
+  berilij: {
+    1: "4",
+    2: "2"
+  },
+  stroncij: {
+    1: "1",
+    2: "4"
+  }
+}
 let correct = 0;
 function finish() {
   arrowNext.style.display = "initial";
@@ -118,6 +143,25 @@ function finish() {
     }
 
   })
+  
+for(i = 1; i < questions.length; i++) {
+  var name = questions[i].id.toLowerCase()
+  
+  for(i = 1; i < 3; i++) {
+    var radioInput = document.querySelector(`input[name=${name}${i}]:checked`);
+  if( radioInput.value === selSolutions[name][i]) {
+    radioInput.labels[0].style.color = "#3ba55b";
+    radioInput.labels[0].style.fontWeight = "700"
+  } else {
+    radioInput.labels[0].style.color = "#ea4246";
+    radioInput.labels[0].style.fontWeight = "700";
+    document.querySelectorAll(`input[name=${name}${i}]`)[parseInt(selSolutions[name][i]) - 1].labels[0].style.color = "#3ba55b";
+    document.querySelectorAll(`input[name=${name}${i}]`)[parseInt(selSolutions[name][i]) - 1].labels[0].style.fontWeight = "700"
+    
+  }
+  }
 
-  console.log(correct)
+ 
+}
+
 }
