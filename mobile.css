@@ -1,0 +1,302 @@
+@font-face {
+    font-family: 'Underwater Love';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Underwater Love'), url('Assets/ulove.woff') format('woff');
+}
+
+* {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+#presentation {
+    display: block;
+    height: 400px;
+    width: 620px;
+    /*border: 4px solid green;*/
+    border-radius: 5px;
+    margin: 20px auto 0 auto;
+}
+
+#title,
+#text {
+    font-family: "Roboto";
+    margin-left: 15px;
+    min-width: 600px;
+    overflow: visible;
+}
+
+#title {
+    color: #223f7a;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+#text {
+    color: black;
+    font-weight: 500;
+}
+
+.video {
+    position: relative;
+    width: 200px;
+     height: 110px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.desc-image {
+    position: relative;
+    height: 110px;
+    width: auto;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-left: 80px;
+    z-index: 10;
+}
+#arrow-left:hover,
+#arrow-right:hover {
+    cursor: pointer;
+}
+
+#arrow-left {
+    position: absolute;
+    top: 210px;
+    left: 400px;
+    color: black;
+    z-index: 10;
+}
+
+#arrow-right {
+    position: absolute;
+    top: 210px;
+    left: 1090px;
+    color: black;
+    z-index: 10;
+}
+
+#quiz {
+    display: block;
+    height: 500px;
+    width: 900px;
+    margin: 400px auto 0 auto;
+}
+
+#title-kviz {
+    font-family: "Underwater Love";
+    font-weight: 700;
+    margin-left: 8px;
+    color: #0494a8;
+}
+
+#match {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 20px;
+    height: 400px;
+    width: 680px;
+    margin: 0 auto 0 auto;
+}
+
+#match img {
+    height: 100px;
+    width: auto;
+    border-radius: 8px;
+}
+
+.images-input {
+    display: block;
+    height: 20px;
+    width: 148px;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    font-family: "Roboto";
+    padding-left: 5px;
+}
+
+.images-input:focus {
+    outline: none;
+    border: 2px solid #0362fc;
+}
+
+.images-input:hover {
+    outline: none;
+    border: 2px solid #0362fc;
+}
+
+.images-input::placeholder {
+    color: rgb(187, 184, 184);
+    padding-left: 5px;
+}
+
+#questions {
+    font-family: "Roboto";
+}
+
+#questions h2 {
+    color: #223f7a;
+    margin-left: 8px;
+}
+
+.elements-questions {
+    margin-left: 80px;
+}
+
+#questions input[type=radio] {
+    margin-left: 24px;
+    font: inherit;
+    background-color: blue;
+}
+
+.question {
+    margin-left: 16px;
+}
+
+#qback:hover,
+#qnext:hover {
+    cursor: pointer;
+}
+
+#qback {
+    position: absolute;
+    top: 1050px;
+    left: 350px;
+    color: black;
+    font-size: 30px;
+
+}
+
+#qnext {
+    position: absolute;
+    top: 1050px;
+    right: 350px;
+    color: black;
+    font-size: 30px;
+}
+
+#qbtn {
+    display: block;
+    height: 40px;
+    width: 80px;
+    outline: none;
+    background-color: #2196F3;
+    border: 2px solid #0c5a99;
+    border-radius: 5px;
+    margin: 8px auto 0 auto;
+}
+
+#qbtn:hover {
+    cursor: pointer;
+}
+
+#stars {
+    display: none;
+}
+
+.waves-up {
+    position: absolute;
+    top: 400px;
+    height: 600px;
+    width: 100%;
+    background-color: #56698F;
+    z-index: -1;
+}
+
+.waves-under {
+    height: 1000px;
+    width: 100%;
+    background-color: #66C3D0;
+    position: absolute;
+    top: 600px;
+    z-index: -1;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+}
+
+#wave1 {
+    animation: wave1 2s ease-in-out alternate infinite;
+}
+
+#wave2 {
+    animation: wave2 3s ease-in-out alternate infinite;
+}
+
+#wave3 {
+    animation: wave3 4s ease-in-out alternate infinite;
+}
+
+@keyframes wave1 {
+    0% {
+        transform: translateX(-2000px);
+    }
+
+    100% {
+        transform: translateX(500px);
+    }
+}
+
+@keyframes wave2 {
+    0% {
+        transform: translateX(-1800px);
+    }
+
+    100% {
+        transform: translateX(500px);
+    }
+}
+
+@keyframes wave3 {
+    0% {
+        transform: translateX(-1600px);
+    }
+
+    100% {
+        transform: translateX(500px);
+    }
+}
+
+@keyframes outSlide {
+    from {
+        margin-left: 0;
+
+    }
+
+    to {
+        margin-left: -600px;
+
+    }
+}
+
+@keyframes inSlide {
+    from {
+        margin-left: 0;
+
+    }
+
+    to {
+        margin-left: 600px;
+
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
