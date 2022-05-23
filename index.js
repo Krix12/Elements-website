@@ -44,6 +44,18 @@ arrowPrev.style.display = "none";
 async function nextQ() {
 
   await (function () {
+
+  var name = questions[currentQ].id.toLowerCase()
+  var radioInput1 = document.querySelector(`input[name=${name}1]:checked`);
+  var radioInput2 = document.querySelector(`input[name=${name}2]:checked`);
+
+  
+  if((!radioInput1 || !radioInput2) && currentQ > 0) {
+   console.log("not ok")
+  } 
+ 
+   else {
+
     arrowPrev.style.display = "inherit";
     questions[currentQ].style.animation = "fade 0.5s";
     sleep(500);
@@ -58,9 +70,11 @@ async function nextQ() {
       arrowNext.style.display = "none";
 
     }
-  })();
+  }
 
+  })();
 }
+
 
 
 
@@ -144,24 +158,34 @@ function finish() {
 
   })
   
-for(i = 1; i < questions.length; i++) {
-  var name = questions[i].id.toLowerCase()
+for(i = 0; i < questions.length + 4; i++) {
   
-  for(i = 1; i < 3; i++) {
-    var radioInput = document.querySelector(`input[name=${name}${i}]:checked`);
-  if( radioInput.value === selSolutions[name][i]) {
-    radioInput.labels[0].style.color = "#3ba55b";
-    radioInput.labels[0].style.fontWeight = "700"
+  var Name = questions[i + 1].id.toLowerCase()
+ 
+    var radioInput1 = document.querySelector(`input[name=${Name}1]:checked`);
+    var radioInput2 = document.querySelector(`input[name=${Name}2]:checked`);
+
+  if( radioInput1.value === selSolutions[Name][1]) {
+    radioInput1.labels[0].style.color = "#3ba55b";
+    radioInput1.labels[0].style.fontWeight = "700";
+   
   } else {
-    radioInput.labels[0].style.color = "#ea4246";
-    radioInput.labels[0].style.fontWeight = "700";
-    document.querySelectorAll(`input[name=${name}${i}]`)[parseInt(selSolutions[name][i]) - 1].labels[0].style.color = "#3ba55b";
-    document.querySelectorAll(`input[name=${name}${i}]`)[parseInt(selSolutions[name][i]) - 1].labels[0].style.fontWeight = "700"
+    radioInput1.labels[0].style.color = "#ea4246";
+    radioInput1.labels[0].style.fontWeight = "700";
+   // document.querySelectorAll(`input[name=${Name}1]`)[parseInt(selSolutions[Name][1]) - 1].labels[0].style.color = "#3ba55b";
+
+  }
+  if( radioInput2.value === selSolutions[Name][2]) {
+    radioInput2.labels[0].style.color = "#3ba55b";
+    radioInput2.labels[0].style.fontWeight = "700"
+  } else {
+    radioInput2.labels[0].style.color = "#ea4246";
+    radioInput2.labels[0].style.fontWeight = "700";
+
+  //  document.querySelectorAll(`input[name=${Name}2]`)[parseInt(selSolutions[Name][2]) - 1].labels[0].style.color = "#3ba55b";
     
   }
-  }
-
- 
+  
 }
-
+ 
 }
