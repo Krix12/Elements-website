@@ -1,5 +1,12 @@
+function start() {
+if(screen.width >= 900) {
+  window.open("desktop.html", "_self")
+}
+else {
+  window.open("mobile.html", "_self")
+}
+}
 const sleep = ms => new Promise(r => setTimeout(r, ms));
-
 var elements = document.getElementsByClassName("el");
 let currentSlide = 0;
 var leftArrow = document.getElementById("arrow-left");
@@ -44,14 +51,22 @@ arrowPrev.style.display = "none";
 async function nextQ() {
 
   await (function () {
-
+  if(screen.width < 900 && currentQ === 0) {
+  document.getElementById("quiz").style.height = "560px";
+  } else if(currentQ === 1) {
+    document.getElementById("quiz").style.height = "470px";
+  } else if(currentQ === questions.length - 2) {
+     document.getElementById("quiz").style.height = "530px";
+    arrowPrev.style.marginRight = "30px"
+  }
+  
   var name = questions[currentQ].id.toLowerCase()
   var radioInput1 = document.querySelector(`input[name=${name}1]:checked`);
   var radioInput2 = document.querySelector(`input[name=${name}2]:checked`);
 
   
   if((!radioInput1 || !radioInput2) && currentQ > 0) {
-   console.log("not ok")
+   alert("Izberi nekaj")
   } 
  
    else {

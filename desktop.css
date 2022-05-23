@@ -14,7 +14,9 @@ body {
     height: 100%;
     width: 100%;
     margin: 0;
+  background-color: #66C3D0
 }
+
 
 #presentation {
     display: block;

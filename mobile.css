@@ -14,29 +14,31 @@ body {
     height: 100%;
     width: 100%;
     margin: 0;
+    background-color: #66C3D0;
 }
 
 #presentation {
     display: block;
-    height: 400px;
+    height: max-content;
     width: 620px;
     /*border: 4px solid green;*/
     border-radius: 5px;
     margin: 20px auto 0 auto;
+  overflow: hidden;
 }
 
 #title,
 #text {
     font-family: "Roboto";
-    margin-left: 15px;
-    min-width: 600px;
-    overflow: visible;
+   
+    overflow: hidden;
 }
 
 #title {
     color: #223f7a;
     font-weight: 900;
     letter-spacing: 2px;
+    margin-left: 5%;
 }
 
 #text {
@@ -44,6 +46,12 @@ body {
     font-weight: 500;
 }
 
+.wrapper {
+  display: block;
+  width: 90%;
+  height: auto;
+  margin: 0 auto 0 auto;
+}
 .video {
     position: relative;
     width: 200px;
@@ -52,71 +60,77 @@ body {
     margin-bottom: 5px;
     border-radius: 5px;
     z-index: 10;
+  overflow: visible!important;
 }
 
 .desc-image {
     position: relative;
-    height: 110px;
-    width: auto;
+    height: auto;
+    width: 130px;
     border-radius: 5px;
     margin-bottom: 5px;
-    margin-left: 80px;
+   overflow: visible!important;
     z-index: 10;
+}
+
+#arrow-container {
+  display: flex;
+  height: max-content;
+  width: 100%;
+  align-items: center;
+  justify-content:  center;
+  margin-top: 10px;
+}
+
+#arrow-left,
+#arrow-right {
+  color: black;
+  font-size: 20px;
 }
 #arrow-left:hover,
 #arrow-right:hover {
     cursor: pointer;
 }
 
-#arrow-left {
-    position: absolute;
-    top: 210px;
-    left: 400px;
-    color: black;
-    z-index: 10;
-}
-
 #arrow-right {
-    position: absolute;
-    top: 210px;
-    left: 1090px;
-    color: black;
-    z-index: 10;
+  
+  margin-left: 20px;
+
 }
 
 #quiz {
     display: block;
-    height: 500px;
-    width: 900px;
-    margin: 400px auto 0 auto;
+    height: 370px;
+    width: 100%;
+    margin: 200px auto 0 auto;
 }
 
 #title-kviz {
     font-family: "Underwater Love";
     font-weight: 700;
     margin-left: 8px;
+
     color: #0494a8;
 }
 
 #match {
     display: grid;
     grid-template-columns: auto auto auto;
-    column-gap: 20px;
     height: 400px;
-    width: 680px;
+    width: 100%;
     margin: 0 auto 0 auto;
 }
 
 #match img {
-    height: 100px;
-    width: auto;
+    height: auto;
+    width: 80px;
     border-radius: 8px;
 }
 
 .images-input {
     display: block;
     height: 20px;
-    width: 148px;
+    width: 80px!important;
     border: 2px solid transparent;
     border-radius: 50px;
     font-family: "Roboto";
@@ -135,7 +149,7 @@ body {
 
 .images-input::placeholder {
     color: rgb(187, 184, 184);
-    padding-left: 5px;
+
 }
 
 #questions {
@@ -161,26 +175,26 @@ body {
     margin-left: 16px;
 }
 
+#qarrow-container {
+  display: flex;
+  height: max-content;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+#qback,
+#qnext {
+  color: black;
+  font-size: 20px;
+}
 #qback:hover,
 #qnext:hover {
     cursor: pointer;
 }
 
-#qback {
-    position: absolute;
-    top: 1050px;
-    left: 350px;
-    color: black;
-    font-size: 30px;
-
-}
-
 #qnext {
-    position: absolute;
-    top: 1050px;
-    right: 350px;
-    color: black;
-    font-size: 30px;
+  margin-left: 80px;
 }
 
 #qbtn {
@@ -204,8 +218,8 @@ body {
 
 .waves-up {
     position: absolute;
-    top: 400px;
-    height: 600px;
+    top: 0;
+    height: 700px;
     width: 100%;
     background-color: #56698F;
     z-index: -1;
@@ -217,12 +231,13 @@ body {
     background-color: #66C3D0;
     position: absolute;
     top: 600px;
-    z-index: -1;
+    z-index: -2;
 }
 
 svg {
     position: absolute;
-    top: 0;
+    top: 500px;
+  z-index: -1;
 }
 
 #wave1 {
